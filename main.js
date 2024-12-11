@@ -5,14 +5,15 @@ function rectangle(a, b, x, y) {
       return 0;
     }
     // invertir el techo
-    return rectangle(a, b, y, x);
+    let tmp = y;
+    y = x;
+    x = tmp;
   }
 
   // calcular cuantos paneles caben
-  let n = 0;
   const nX = Math.floor(x / a);
   const nY = Math.floor(y / b);
-  n += nY * nX;
+  const n = nX * nY;
 
   if (x == a * nX && y == b * nY) {
     return n;
